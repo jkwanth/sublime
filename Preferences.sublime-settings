@@ -1,0 +1,12 @@
+{
+	"color_scheme": "Packages/Theme - Centurion/Galea.tmTheme",
+	"fade_fold_buttons": false,
+	"font_size": 14,
+	"ignored_packages":
+	[
+		"Markdown",
+		"Vintage"
+	],
+	"theme": "Cobalt2.sublime-theme",
+	"word_wrap":true
+}
