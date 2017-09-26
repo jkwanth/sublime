@@ -1,0 +1,25 @@
+<snippet>
+	<content><![CDATA[
+var videoUrls = ytplayer.config.args.url_encoded_fmt_stream_map
+  .split(',')
+  .map(function (item) {
+    return item
+      .split('&')
+      .reduce(function (prev, curr) {
+        curr = curr.split('=');
+        return Object.assign(prev, {[curr[0]]: decodeURIComponent(curr[1])})
+      }, {});
+  })
+  .reduce(function (prev, curr) {
+    return Object.assign(prev, {
+      [curr.quality_label || curr.type]: curr
+    });
+  }, {});
+
+console.log(videoUrls);
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>js.yt</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>
